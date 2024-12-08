@@ -1,0 +1,13 @@
+-- 코드를 입력하세요
+SELECT COUNT(DISTINCT NAME) AS count
+FROM ANIMAL_INS
+
+
+-- 서브 쿼리를 통한 구현
+SELECT COUNT(*) AS count
+FROM (
+    SELECT *
+    FROM ANIMAL_INS
+    WHERE NAME IS NOT NULL
+    GROUP BY NAME
+) AS A
